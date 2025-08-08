@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Motivational Quote Card</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Arial, sans-serif;
+      background: linear-gradient(135deg, #FFDEE9 0%, #B5FFFC 100%);
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .quote-card {
+      background: #fff;
+      border-radius: 20px;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.14);
+      padding: 36px 32px;
+      max-width: 380px;
+      text-align: center;
+      transition: box-shadow 0.2s;
+    }
+    .quote-card:hover {
+      box-shadow: 0 8px 32px rgba(0,0,0,0.18);
+    }
+    .quote-text {
+      font-size: 1.35em;
+      font-weight: 500;
+      color: #333;
+      margin-bottom: 18px;
+      min-height: 70px;
+    }
+    .quote-author {
+      font-size: 1em;
+      color: #7c7c7c;
+      font-style: italic;
+      margin-bottom: 24px;
+    }
+    .btn {
+      display: inline-block;
+      background: linear-gradient(90deg, #38ef7d, #11998e);
+      color: #fff;
+      padding: 12px 32px;
+      border-radius: 32px;
+      border: none;
+      cursor: pointer;
+      font-size: 1em;
+      transition: background 0.2s;
+      outline: none;
+    }
+    .btn:hover {
+      background: linear-gradient(90deg, #FF6A6A, #FFD600);
+      color: #333;
+    }
+  </style>
+</head>
+<body>
+  <div class="quote-card">
+    <div class="quote-text" id="quoteText">
+      "The best way to get started is to quit talking and begin doing."
+    </div>
+    <div class="quote-author" id="quoteAuthor">
+      – Walt Disney
+    </div>
+    <button class="btn" onclick="showRandomQuote()">New Quote</button>
+  </div>
+  <script>
+    const quotes = [
+      {
+        text: "The best way to get started is to quit talking and begin doing.",
+        author: "Walt Disney"
+      },
+      {
+        text: "Success is not in what you have, but who you are.",
+        author: "Bo Bennett"
+      },
+      {
+        text: "Don’t watch the clock; do what it does. Keep going.",
+        author: "Sam Levenson"
+      },
+      {
+        text: "Everything you’ve ever wanted is on the other side of fear.",
+        author: "George Addair"
+      },
+      {
+        text: "The only place where success comes before work is in the dictionary.",
+        author: "Vidal Sassoon"
+      },
+      {
+        text: "Opportunities don't happen. You create them.",
+        author: "Chris Grosser"
+      },
+      {
+        text: "Great things never come from comfort zones.",
+        author: "Neil Strauss"
+      },
+      {
+        text: "Push yourself, because no one else is going to do it for you.",
+        author: "Anonymous"
+      },
+      {
+        text: "Success is not final, failure is not fatal: it is the courage to continue that counts.",
+        author: "Winston Churchill"
+      }
+    ];
+
+    function showRandomQuote() {
+      const randomIndex = Math.floor(Math.random() * quotes.length);
+      document.getElementById('quoteText').textContent = `"${quotes[randomIndex].text}"`;
+      document.getElementById('quoteAuthor').textContent = `– ${quotes[randomIndex].author}`;
+    }
+  </script>
+</body>
+</html>
